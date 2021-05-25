@@ -30,4 +30,11 @@ class CurrencyControllerTest {
                 .andExpect(status().isOk())
                 .andDo(print());
     }
+
+    @Test
+    public void testGetSpendsThatGreater() throws Exception {
+        mockMvc.perform(get("/getSpendStats").param("amount", "200"))
+                .andExpect(status().isOk())
+                .andDo(print());
+    }
 }

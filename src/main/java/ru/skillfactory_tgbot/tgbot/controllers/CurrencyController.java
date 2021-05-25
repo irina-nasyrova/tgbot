@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import ru.skillfactory_tgbot.tgbot.dto.ValuteCursOnDate;
+import ru.skillfactory_tgbot.tgbot.entity.Spend;
 import ru.skillfactory_tgbot.tgbot.service.CentralRussianBankService;
 import ru.skillfactory_tgbot.tgbot.service.StatsService;
 
@@ -39,4 +40,9 @@ public class CurrencyController {
         return statsService.getCountOfIncomesThatGreater(amount);
     }
 
+    @GetMapping("/getSpendStats")
+    @ApiOperation(value = "Получение трат, которые превышают определенную сумму")
+    public List<Spend> getSpendsThatGreater(@RequestParam(value = "amount") Long amount) {
+        return statsService.getSpendsThatGreaterThan(amount);
+    }
 }
