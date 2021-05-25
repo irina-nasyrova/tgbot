@@ -20,6 +20,7 @@ class IncomeRepositoryTest {
 
     @Test
     public void testRepo() {
+        incomeRepository.deleteAll();
         for (int i = 0; i < 10; i++, incomeRepository.save(new Income())) { ; }
         final List<Income> found = incomeRepository.findAll();
         assertEquals(10, found.size());
