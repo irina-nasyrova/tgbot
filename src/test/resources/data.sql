@@ -1,1 +1,1 @@
-insert into income (id, chat_id, spend) values (12345, 2, 3000);
+insert into income (id, chat_id, income) values (12345, 2, 3000);

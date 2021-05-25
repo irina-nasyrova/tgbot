@@ -1,4 +1,4 @@
-alter table incomes
+alter table income
 	add date timestamp;
 
 alter table spend
