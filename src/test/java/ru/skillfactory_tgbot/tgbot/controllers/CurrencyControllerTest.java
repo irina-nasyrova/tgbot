@@ -23,4 +23,11 @@ class CurrencyControllerTest {
                 .andExpect(status().isOk())
                 .andDo(print());
     }
+
+    @Test
+    public void testWhenAskAboutOneCurrency() throws Exception {
+        mockMvc.perform(get("/getCurrency/USD"))
+                .andExpect(status().isOk())
+                .andDo(print());
+    }
 }
